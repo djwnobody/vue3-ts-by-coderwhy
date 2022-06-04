@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <template id="my-app">
+      <textarea id="" cols="30" rows="10" v-model="textarea"></textarea>
+      <div>textarea 当前的值是:{{textarea}}</div>
+
+      <label for="dan">
+        <input type="checkbox" v-model="isAgree" id="dan" />同意
+      </label>
+      <div>isAgree 当前的值是:{{isAgree}}</div>
+
+      <div>
+        <label for="basketball">
+          <input
+            type="checkbox"
+            id="basketball"
+            v-model="hobbies"
+            value="bask"
+          />篮球
+        </label>
+        <label for="football">
+          <input
+            type="checkbox"
+            id="football"
+            v-model="hobbies"
+            value="foot"
+          />足球
+        </label>
+      </div>
+      <div>hobbies 当前的值是:{{hobbies}}</div>
+
+      <div>
+        <label for="nan">
+          <input type="radio" v-model="sex" id="nan" value="male"/>男
+        </label>
+        <label for="nv"> <input type="radio" v-model="sex" id="nv" value="female"/>女 </label>
+      </div>
+      <div>sex 当前的值是:{{sex}}</div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      const App = {
+        template: '#my-app',
+        data() {
+          return {
+            textarea: '',
+            isAgree: true,
+            hobbies: [],
+            sex: '',
+          }
+        },
+        methods: {},
+      }
+
+      Vue.createApp(App).mount('#app')
+    </script>
+  </body>
+</html>
